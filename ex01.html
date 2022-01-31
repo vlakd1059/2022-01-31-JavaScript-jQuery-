@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <style> 
+      #text1 { 
+        background-color: aliceblue; 
+        font-size: 100px; 
+      }
+    </style> 
+
+    <script>
+      /*
+        dom== 각각의 태그들이 생성되지 않은 상태에서
+        실행시키면 제대로 객체를 가져올 수 없어서
+        자바스크립트에 대한 내용이 실행 되지않는다
+
+        무조건으로 위에서 작성하면 실행되지않나? -> X
+        */
+      // 문서를 가져와서 ready 준비가 됐다면 function를 싱행시켜라
+      $(document).ready(function name(params) {
+        let h1 = document.getElementById("text1");
+        // h1.style.color="red";
+        // %("선택자") --> 웹페이지를 구성하는 요소(태그)
+        // 제이쿼리의 객체로 가져오라는 뜻
+        // 제이쿼리 객체에 맞는 문법(속성, 함수)를 적용 시켜줘야한다.
+        $("h1").css("color", "red");
+        // h1 태그에 대한 내용을 --> 모레도 토요일이였으면
+        $("h1").text("모레도 토요일이였으면"); 
+        // h1--> a 태그로 바꾸고싶다 
+        // $("h1").html("<a href='#'>jQuery</a>"); 
+
+        // 글씨 크기를 200px, html태그에 배경색을 오렌지로 바꿔보자
+        // 제이쿼리라는 CSS를 통해 한번에 적용시킬수 있음
+        $("h1").css({
+          color: "red",
+          fontSize: "100px",
+          "backgroud-color": "orange",
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1 id="text1">내일은 드디어 토요일</h1>
+  </body>
+</html>
