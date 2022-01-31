@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1>Mouse Click</h1>
+    <h1>This Keyword</h1>
+    <script>
+      //  $("h1").on("mouseover", function () {
+      //    $("h1").css("color", "blue");
+      //  });
+
+      // h1 태그를 클릭한다면 색깔이 다시 원래대로 돌아오게 해보기
+      //   $("h1").on("mouseout", function () {
+      //    $("h1").css("color", "black");
+      //  });
+
+      // h1 태그를 클릭했을때 내용을 바꾸게 해보기
+      // innerText == .text()
+      //  $("h1").on("click", function () {
+      //    $("h1").html("Hello jquery");
+      //  });
+
+      // 이벤트 한번에 적용
+      // this --> 선택한 요소만 적용되게끔
+      // 호출된 HTML 객체가 저장되는 변수(실행주체)
+      // 사용자가 선택한 요소만!(하나만) 저장이 되는 변수
+      // 실행된 내용에 따라 this에 적용되는 값이 자동으로 변함
+      $("h1").on({
+        click: function () {
+          $(this).html("Hello jquery");
+        },
+        mouseover: function () {
+          $(this).css("color", "blue");
+        },
+        mouseout: function () {
+          $(this).css("color", "black");
+        },
+      });
+    </script>
+  </body>
+</html>
